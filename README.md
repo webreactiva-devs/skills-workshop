@@ -3,7 +3,7 @@
 > Masterclass en [Web Reactiva Premium](https://webreactiva.com)
 
 
-[](assets/image.png)
+![](assets/image.png)
 
 
 ## Sobre este taller
