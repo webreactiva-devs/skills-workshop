@@ -276,6 +276,9 @@ section.section-break h2::after {
 
 ## **Masterclass en Web Reactiva Premium**
 
+---
+
+# En dos semanas, ¡agentes!
 
 ---
 
@@ -350,7 +353,7 @@ description: "[Qué hace] + [Cuándo usarlo] + [Capacidades clave]"
 ## Instalar skills
 
 1. Descargando la skill a la carpeta de la skill
-2. Usando **skills.sh** — la forma más sencilla
+2. Usando [skills.sh](https://skills.sh) — la forma más sencilla
 
 ```bash
 npx skills add https://github.com/anthropics/skills \
@@ -380,16 +383,17 @@ npx skills -h
 
 | Patrón | Cuándo | Ejemplo |
 |--------|--------|---------|
-| **Workflow** | Pipeline con decisiones secuenciales | `docx` — Decision Tree |
-| **Task** | Operaciones independientes | `pdf` — Merge · Split · OCR |
-| **Reference** | Criterios y estándares | `xlsx` — Color coding · Formats |
+| **Router+Workflow** | Pipeline con decisiones secuenciales | `docx` |
+| **Task** | Operaciones independientes | `pdf` |
+| **Reference** | Criterios y estándares | `xlsx` |
 | **Capabilities** | Features interrelacionadas | Buenas prácticas para skills |
+| **Decision tree** | If / else if / else | Git undo |
 
 ---
 
-## Patrón 1 · Workflow-Based
+## Patrón 1 · Router + Workflow
 
-Caso real: skill `docx` — **590 líneas**
+Caso real: skill `docx` — [ver skill](https://github.com/anthropics/skills/blob/main/skills/docx/SKILL.md)
 
 ```
 Quick Reference (router)
@@ -398,15 +402,13 @@ Quick Reference (router)
 └── ¿Editar? → Unpack XML → Edit → Pack
 ```
 
-Las reglas **CRITICAL** y **NEVER** viven dentro de cada paso, no al principio
-
 > Progressive Disclosure aplicado al workflow
 
 ---
 
 ## Patrón 2 · Task-Based
 
-Caso real: skill `pdf` — **315 líneas**
+Caso real: skill `pdf` — [ver skill](https://github.com/anthropics/skills/blob/main/skills/pdf/SKILL.md)
 
 ```
 Quick Start (5 líneas de código)
@@ -424,7 +426,7 @@ Cada tarea es **independiente** y **copiar-pegar**
 
 ## Patrón 3 · Reference
 
-Caso real: skill `xlsx` — **292 líneas**
+Caso real: skill `xlsx`
 
 ```
 Requirements for Outputs (lo primero)
@@ -444,7 +446,7 @@ sheet['B10'] = '=SUM(B2:B9)'
 
 ## Patrón 4 · Capabilities
 
-Caso real: skill `skill-best-practices`
+Caso real: skill `skill-best-practices` — [ver skill](https://github.com/webreactiva-devs/skills-workshop/blob/main/skills/skill-best-practices/SKILL.md)
 
 ```
 Skill Quality Checklist (hub central)
@@ -460,10 +462,10 @@ Skill Quality Checklist (hub central)
 
 ---
 
-## Patrón 5 · Decision Trees
+## Patrón 5 · Decision Trees [git-undo](https://github.com/webreactiva-devs/skills-workshop/blob/main/skills/git-undo/SKILL.md)
 
 ```
-⏺ ¿Los cambios están en staging (git add)?
+¿Los cambios están en staging (git add)?
   ├── NO → ¿Descartar TODO?
   │   ├── SÍ → git checkout -- . && git clean -fd
   │   └── NO → ¿Es archivo nuevo (untracked)?
@@ -485,7 +487,7 @@ Skill Quality Checklist (hub central)
 > En el cuerpo de la skill pídele a la IA que te pregunte por lo que deseas
 
 ```
-- Pregunta cuáles son sus preferencias de color. Por defecto es rojo.
+- Pregunta al usuario cuáles son sus preferencias de color. El color por defecto es el rojo.
 ```
 
 
@@ -514,32 +516,37 @@ Skill Quality Checklist (hub central)
 - El agente tiene su **propia ventana de contexto**
 - El agente tiene una **tarea propia**
 - El agente se comunica con **otros agentes**
-- Skills **lanzan** Agents
+- Skills **lanzan** Agents / Agents **leen** Skills
 
 ---
 
 ## Skills vs Commands
 
 - Command es solo el salero — Skill es la **receta**
-- Los comandos son **prompts reutilizables**
+- Los comandos son **prompts reutilizables** (/escribir-commit)
 - Los comandos **no tienen scripts**
 - Skills son los **sustitutos** de Commands
 
 ---
 
-<!-- _class: section-break -->
-
-## Demo: Skill desde una base de conocimiento
+# Más demos
 
 ---
 
-## Fuentes de conocimiento
+## Crea skills desde fuentes de conocimiento
 
 - Documentación oficial de frameworks
 - Estándares de seguridad (PCI, OWASP)
 - Base de código existente
 - Contenido ajeno (ej: karpathy-skills)
 - Conversaciones con un chat
+
+
+---
+
+<!-- _class: section-break -->
+
+## Demo: Skill desde una base de conocimiento
 
 ---
 
